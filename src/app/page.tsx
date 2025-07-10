@@ -15,10 +15,9 @@ export default function Home() {
         className="min-h-screen pt-16"
         style={{
           backgroundImage: 'url("https://images.pexels.com/photos/6077447/pexels-photo-6077447.jpeg")',
-          backgroundPosition: "bottom",
+          backgroundPosition: "center",
           backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed"
+          backgroundRepeat: "no-repeat"
         }}>
         <Header />
       </div>
