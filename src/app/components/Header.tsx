@@ -16,6 +16,9 @@ const Header = () => {
 
   return (
     <header className="relative min-h-screen flex items-center">
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      
       {/* İçerik */}
       <div className="relative z-10 text-left px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Üst Başlık */}
