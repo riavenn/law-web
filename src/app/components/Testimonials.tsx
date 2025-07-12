@@ -143,7 +143,7 @@ const Testimonials = () => {
           <button
             onClick={() => handleManualNavigation(handlePrevSlide)}
             onKeyDown={(e) => handleKeyDown(e, () => handleManualNavigation(handlePrevSlide))}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-slate-900/95 hover:bg-slate-800 text-white p-3 rounded-full shadow-lg z-10 cursor-pointer"
+            className="absolute left-2 md:left-0 top-1/2 transform -translate-y-1/2 bg-slate-900/95 hover:bg-slate-800 text-white p-3 rounded-full shadow-lg z-10 cursor-pointer"
             tabIndex={0}
             aria-label="Önceki yorum"
           >
@@ -155,7 +155,7 @@ const Testimonials = () => {
           <button
             onClick={() => handleManualNavigation(handleNextSlide)}
             onKeyDown={(e) => handleKeyDown(e, () => handleManualNavigation(handleNextSlide))}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-slate-900/95 hover:bg-slate-800 text-white p-3 rounded-full shadow-lg z-10 cursor-pointer"
+            className="absolute right-2 md:right-0 top-1/2 transform -translate-y-1/2 bg-slate-900/95 hover:bg-slate-800 text-white p-3 rounded-full shadow-lg z-10 cursor-pointer"
             tabIndex={0}
             aria-label="Sonraki yorum"
           >
@@ -165,7 +165,7 @@ const Testimonials = () => {
           </button>
 
           {/* Slider Content */}
-          <div className="overflow-hidden rounded-xl mx-12">
+          <div className="overflow-hidden rounded-xl mx-6 md:mx-12">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{

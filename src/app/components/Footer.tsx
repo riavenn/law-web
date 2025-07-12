@@ -20,6 +20,17 @@ const Footer = () => {
     }
   };
 
+  const handleHomeClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleHomeKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleHomeClick();
+    }
+  };
+
   return (
     <footer id="footer" className="bg-slate-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +38,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Sol Kısım - Logo ve Büro Bilgileri */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
+            <button
+              onClick={handleHomeClick}
+              onKeyDown={handleHomeKeyDown}
+              className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+              tabIndex={0}
+              aria-label="Anasayfaya git"
+            >
               {/* Logo */}
               <div className="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -36,7 +53,7 @@ const Footer = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white">Adalet Hukuk Bürosu</h3>
-            </div>
+            </button>
             <p className="text-slate-300 leading-relaxed max-w-sm">
               25 yıllık deneyimimizle, bireysel ve kurumsal müvekkillerimize
               en kaliteli hukuki hizmetleri sunuyoruz. Adalet ve güven bizim önceliğimizdir.

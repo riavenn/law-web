@@ -29,12 +29,29 @@ const Navbar = () => {
     }
   };
 
+  const handleHomeClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleHomeKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleHomeClick();
+    }
+  };
+
   return (
     <nav className="backdrop-blur-md bg-slate-900/95 shadow-lg fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo ve Şirket Adı */}
-          <div className="flex items-center space-x-3">
+          <button
+            onClick={handleHomeClick}
+            onKeyDown={handleHomeKeyDown}
+            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+            tabIndex={0}
+            aria-label="Anasayfaya git"
+          >
             <div className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center">
               <svg
                 className="w-6 h-6 text-white"
@@ -50,7 +67,7 @@ const Navbar = () => {
               <h1 className="text-xl font-bold">Adalet Hukuk</h1>
               <p className="text-xs text-white/80">Bürosu</p>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
@@ -126,14 +143,14 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-800/90 backdrop-blur-md border-t border-slate-600">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a
-                href="#anasayfa"
-                className="block px-3 py-2 text-white/90 hover:text-white hover:bg-slate-700/50 rounded-md"
+              <button
+                onClick={() => { handleHomeClick(); setIsMenuOpen(false); }}
+                className="block w-full text-left px-3 py-2 text-white/90 hover:text-white hover:bg-slate-700/50 rounded-md cursor-pointer"
                 tabIndex={0}
                 aria-label="Anasayfa"
               >
                 Anasayfa
-              </a>
+              </button>
               <a
                 href="#hakkimizda"
                 className="block px-3 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-md"

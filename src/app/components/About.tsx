@@ -21,7 +21,7 @@ const About = () => {
               <img
                 src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=400"
                 alt="Hukuk kitapları"
-                className="w-48 h-32 object-cover rounded-lg shadow-xl border-4 border-white"
+                className="w-32 h-20 sm:w-48 sm:h-32 object-cover rounded-lg shadow-xl border-4 border-white"
               />
             </div>
 
